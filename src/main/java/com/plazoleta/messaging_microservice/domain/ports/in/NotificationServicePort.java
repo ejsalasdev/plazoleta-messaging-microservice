@@ -5,8 +5,4 @@ import com.plazoleta.messaging_microservice.domain.model.NotificationModel;
 public interface NotificationServicePort {
 
     NotificationModel sendSmsNotification(String phoneNumber, String message, String securityPin, Long orderId);
-    
-    NotificationModel getNotificationByOrderId(Long orderId);
-    
-    NotificationModel getNotificationById(Long id);
 }

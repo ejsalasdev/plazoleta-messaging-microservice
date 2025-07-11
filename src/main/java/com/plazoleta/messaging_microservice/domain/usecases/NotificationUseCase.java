@@ -30,20 +30,6 @@ public class NotificationUseCase implements NotificationServicePort {
         return notification;
     }
 
-    @Override
-    public NotificationModel getNotificationByOrderId(Long orderId) {
-        // For now, this microservice doesn't persist notifications
-        // This would typically query a database or cache
-        throw new UnsupportedOperationException("Notification retrieval not implemented yet");
-    }
-
-    @Override
-    public NotificationModel getNotificationById(Long id) {
-        // For now, this microservice doesn't persist notifications
-        // This would typically query a database or cache
-        throw new UnsupportedOperationException("Notification retrieval not implemented yet");
-    }
-
     private void validatePhoneNumber(String phoneNumber) {
         if (phoneNumber == null || phoneNumber.trim().isEmpty()) {
             throw new IllegalArgumentException(DomainMessagesConstants.INVALID_PHONE_NUMBER);
