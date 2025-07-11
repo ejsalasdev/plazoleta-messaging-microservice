@@ -18,7 +18,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("/notifications")
+@RequestMapping("/api/v1/notifications/sms")
 @Tag(name = "Notification Management", description = "SMS notification operations")
 public class NotificationController {
 
@@ -28,7 +28,7 @@ public class NotificationController {
         this.notificationHandler = notificationHandler;
     }
 
-    @PostMapping("/sms")
+    @PostMapping
     @Operation(summary = "Send SMS notification", 
                description = "Send SMS notification to customer when order is ready with security PIN")
     @ApiResponses(value = {
