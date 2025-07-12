@@ -1,28 +1,26 @@
 package com.plazoleta.messaging_microservice.application.dto.request;
 
 import io.swagger.v3.oas.annotations.media.Schema;
-import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 
 @Schema(description = "Request to send SMS notification")
 public class SendSmsRequest {
 
-    @NotBlank(message = "Phone number is required")
+    @NotNull(message = "Phone number is required")
     @Pattern(regexp = "^\\+?[1-9]\\d{1,14}$", message = "Invalid phone number format")
-    @Schema(description = "Phone number to send SMS", example = "+573001234567", required = true)
+    @Schema(description = "Phone number to send SMS", example = "+573001234567")
     private String phoneNumber;
 
-    @NotBlank(message = "Message is required")
-    @Schema(description = "SMS message content", example = "Your order is ready! PIN: 1234", required = true)
+    @NotNull(message = "Message is required")
+    @Schema(description = "SMS message content", example = "Your order is ready! PIN: 1234")
     private String message;
 
-    @NotBlank(message = "Security PIN is required")
-    @Schema(description = "Security PIN for order pickup", example = "1234", required = true)
+    @Schema(description = "Security PIN for order pickup", example = "123456")
     private String securityPin;
 
     @NotNull(message = "Order ID is required")
-    @Schema(description = "Order ID associated with the notification", example = "12345", required = true)
+    @Schema(description = "Order ID associated with the notification", example = "12345")
     private Long orderId;
 
     public SendSmsRequest() {
